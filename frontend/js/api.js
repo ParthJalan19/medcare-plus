@@ -21,7 +21,7 @@ const getAccessToken = () => accessToken;
 // Generic Fetch Wrapper
 const fetchAPI = async (endpoint, options = {}) => {
   const url = `${BASE_URL}${endpoint}`;
-  
+
   // Set headers
   const headers = {
     'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const fetchAPI = async (endpoint, options = {}) => {
     if (!response.ok && response.status === 401 && data.code === 'TOKEN_EXPIRED') {
       console.log('Access token expired. Attempting refresh token rotation...');
       const refreshSuccess = await rotateTokens();
-      
+
       if (refreshSuccess) {
         // Retry the original request with new access token
         headers['Authorization'] = `Bearer ${accessToken}`;
@@ -98,7 +98,7 @@ const rotateTokens = async () => {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' }
     });
-    
+
     if (res.ok) {
       const data = await res.json();
       if (data.success && data.data.token) {
