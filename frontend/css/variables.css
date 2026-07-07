@@ -1,0 +1,61 @@
+:root {
+  /* Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-sidebar: #0f172a; /* Dark slate for premium sidebar contrast */
+  --bg-sidebar-hover: #1e293b;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-light: #ffffff;
+  
+  /* Primary Accent - Clinical Teal */
+  --primary: #0F6E56;
+  --primary-hover: #0a4f3e;
+  --primary-light: #e6f4f0;
+  --primary-glow: rgba(15, 110, 86, 0.15);
+
+  /* Status and Warnings (Only for states, not decoration) */
+  --status-success: #10b981; /* Green */
+  --status-success-bg: #ecfdf5;
+  --status-pending: #f59e0b; /* Amber */
+  --status-pending-bg: #fffbeb;
+  --status-danger: #ef4444; /* Red / Coral */
+  --status-danger-bg: #fef2f2;
+  
+  /* Borders & Shadows */
+  --border-color: #e2e8f0;
+  --border-hairline: 1px solid var(--border-color);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --focus-ring: 0 0 0 3px var(--primary-glow);
+  
+  /* Spacing Scale */
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* Base resets & styling variables */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}

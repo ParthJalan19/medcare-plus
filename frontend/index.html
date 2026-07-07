@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedCare Plus — Smart Healthcare Management</title>
+  <!-- SEO & Meta -->
+  <meta name="description" content="MedCare Plus is a modern hospital, clinic, and patient care management single-page application.">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Sidebar mobile backdrop drawer -->
+  <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+  <div id="app-shell" class="app-container" style="display: none;">
+    <!-- LEFT SIDEBAR -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <i data-lucide="activity" class="brand-icon"></i>
+          <span>medcare plus</span>
+        </div>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <ul id="sidebar-items">
+          <!-- Dynamic sidebar items injected here based on role -->
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-quick-profile">
+          <img id="sidebar-avatar" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=120" alt="avatar" class="avatar">
+          <div class="user-quick-info">
+            <div id="sidebar-username" style="font-size: 0.85rem; font-weight: 600;">Dr. House</div>
+            <div id="sidebar-role" style="font-size: 0.75rem; color: var(--text-muted); text-transform: capitalize;">Doctor</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="main-wrapper">
+      <!-- TOP BAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="hamburger-btn" class="hamburger-btn">
+            <i data-lucide="menu"></i>
+          </button>
+          <h1 id="topbar-title" class="topbar-title">Dashboard</h1>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Global Search -->
+          <div class="search-container">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" id="global-search" placeholder="Search patients, doctors..." class="search-input">
+          </div>
+
+          <!-- Notification Bell -->
+          <button id="notification-btn" class="notification-bell">
+            <i data-lucide="bell"></i>
+            <span id="unread-dot" class="unread-dot" style="display: none;"></span>
+          </button>
+
+          <!-- Profile Dropdown -->
+          <div class="profile-menu">
+            <div id="profile-trigger" class="profile-trigger">
+              <img id="topbar-avatar" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=120" alt="avatar" class="avatar">
+              <i data-lucide="chevron-down" style="width: 16px; height: 16px; color: var(--text-secondary);"></i>
+            </div>
+            
+            <ul id="profile-dropdown" class="profile-dropdown">
+              <li class="dropdown-item">
+                <a href="#/settings"><i data-lucide="settings" style="width: 14px;"></i><span>Settings</span></a>
+              </li>
+              <li class="dropdown-item">
+                <button id="logout-btn"><i data-lucide="log-out" style="width: 14px;"></i><span>Logout</span></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- VIEW RENDER MOUNT TARGET -->
+      <main id="content-area" class="content-panel">
+        <!-- Views are mounted here -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Landing page / Auth page container (shown when user is guest) -->
+  <div id="public-shell" style="display: block;">
+    <main id="public-content-area">
+      <!-- Public views (Home, Login, Register) are mounted here -->
+    </main>
+  </div>
+
+  <!-- Global Modal Element -->
+  <div id="global-modal" class="modal-backdrop">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title" class="modal-title">Modal Title</h3>
+        <button id="modal-close" class="modal-close"><i data-lucide="x" style="width: 18px; height: 18px;"></i></button>
+      </div>
+      <div id="modal-body" class="modal-body">
+        <!-- Dynamic modal form elements loaded here -->
+      </div>
+      <div id="modal-footer" class="modal-footer">
+        <button id="modal-cancel-btn" class="btn btn-secondary">Cancel</button>
+        <button id="modal-submit-btn" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CDNs -->
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- GSAP Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- ChartJS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Application Modules -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
